@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import SearchLogo from '../containers/SearchLogo'
+import SearchForm from '../containers/SearchForm'
 import VisibleLogos from '../containers/VisibleLogos'
 // import VisibleLogos from './LogoList'
 
 const App = () => (
-  <div>
+  <div className="appContainer">
+    <SearchForm />
     <VisibleLogos />
   </div>
 )

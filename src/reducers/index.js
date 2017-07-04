@@ -1,10 +1,9 @@
 import { combineReducers } from 'redux'
-import logos from './logos'
-import visibilityFilter from './visibilityFilter'
+import results from './results'
+// import visibilityFilter from './visibilityFilter'
 
 const sketchLogosApp = combineReducers({
-	logos,
-	visibilityFilter
+	results
 })
 
 export default sketchLogosApp

@@ -1,0 +1,59 @@
+.resultsContainer {
+    max-height: calc(100% - 34px);
+    overflow: auto;
+    margin-top: 15px;
+    padding-bottom: 15px;
+}
+
+.logoItem, .logoLoading {
+    display: block;
+    margin-bottom: 15px;
+    width: 96px;
+    height: 96px;
+    line-height: 82px;
+    text-align: center;
+    transition: 0;
+
+    &.logoLoaded {
+        background-color: transparent !important;
+
+        >img {
+            opacity: 1;
+        }
+    }
+
+    >img {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+	    opacity: 0;
+        transition: 0.22s opacity;
+    }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 96px;
+    position: relative;
+}
+
+@keyframes placeHolderShimmer{
+    0%{
+        background-position: -468px 0
+    }
+    100%{
+        background-position: 468px 0
+    }
+}
+
+#btnLoadMore {
+	margin-top: 30px;
+    margin-bottom: 30px;
+}

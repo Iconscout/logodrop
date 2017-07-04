@@ -1,0 +1,15 @@
+@import '../plugins/bootstrap-sass-master/assets/stylesheets/bootstrap';
+@import './components/elements/scrollbar';
+@import './components/results';
+@import './components/search-form';
+
+
+body {
+	margin-top: 22px;
+	overflow: hidden;
+}
+
+.appContainer {
+	width: 383px;
+	height: 560px;
+}

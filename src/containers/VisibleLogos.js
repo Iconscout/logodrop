@@ -1,16 +1,23 @@
 import { connect } from 'react-redux'
 import LogoList from '../components/LogoList'
+import { loadMoreLogos, logoLoaded, insertLogo } from '../actions'
 
 const mapStateToProps = (state) => {
 	return {
-		logos: state.logos
+		results: state.results
 	}
 }
 
-const mapDispatcherToProps = (dispatch) => {
+const mapDispatcherToProps = (dispatch, ownProps) => {
 	return {
 		onLogoClick: (id) => {
-			console.log("clicked" + id)
+			dispatch(insertLogo(id))
+		},
+		onImageLoaded: (id) => {
+			dispatch(logoLoaded(id))
+		},
+		onLoadMore: (url) => {
+			dispatch(loadMoreLogos(url))
 		}
 	}
 }

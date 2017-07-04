@@ -1,13 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
 import sketchLogosApp from './reducers'
 import App from './components/App'
+import './stylesheets/main.css'
+//import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 let store = createStore(
 	sketchLogosApp,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+	applyMiddleware(thunk)
 )
 
 ReactDOM.render(

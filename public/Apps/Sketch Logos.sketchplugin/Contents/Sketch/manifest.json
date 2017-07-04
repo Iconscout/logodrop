@@ -1,0 +1,21 @@
+{
+  "name" : "Sketch Logos",
+  "description": "Get all brand logos right into Sketch.",
+  "author" : "Iconscout",
+  "authorEmail": "contact@iconscout.com",
+  "homepage": "https://iconscout.com",
+  "version" : "0.0.1",
+  "identifier" : "com.iconscout.sketch-plugin",
+  "commands" : [{
+    "name" : "Search Logo",
+    "script" : "main.js",
+    "handler" : "searchLogos",
+    "identifier" : "search-logo"
+  }],
+  "menu" : {
+    "items" : [
+      "search-logo"
+    ],
+    "title" : "Sketch Logos"
+  }
+}
