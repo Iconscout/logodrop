@@ -7,7 +7,6 @@
   "homepage": "https://iconscout.com",
   "author" : "Iconscout",
   "authorEmail": "contact@iconscout.com",
-  "appcast": "https://raw.githubusercontent.com/Iconscout/sketch-logos/master/appcast.xml",
   "commands" : [{
     "name" : "Logodrop 💎",
     "script" : "main.cocoascript",
