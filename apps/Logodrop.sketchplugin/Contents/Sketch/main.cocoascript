@@ -7,7 +7,7 @@ function searchLogos(context) {
   var webviewResource = 'index.html';
   var panelSettings = {
     width: 390,
-    height: 560,
+    height: 498,
     backgroundColor: NSColor.whiteColor()
   };
 

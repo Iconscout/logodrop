@@ -42,7 +42,6 @@ function showPanel(options) {
 
     contentView.setWantsLayer(true);
     contentView.layer().setFrame( contentView.frame() );
-    contentView.layer().setCornerRadius(6);
     contentView.layer().setMasksToBounds(true);
 
     webView.setBackgroundColor(panelSettings.backgroundColor);
@@ -63,6 +62,7 @@ function showPanel(options) {
     panel.setLevel(NSFloatingWindowLevel);
     panel.center();
     panel.makeKeyAndOrderFront(nil);
+    
   } catch(e) {
     log(e);
   }
