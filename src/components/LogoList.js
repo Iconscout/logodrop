@@ -13,7 +13,7 @@ const LogoList = ({ results, onLogoClick, onImageLoaded, onLoadMore }) => (
         autoHideTimeout={1000}
         // Duration for hide animation in ms.
         autoHideDuration={200}
-		style={{ width: 390, height: 448 }}
+		style={{ width: 390, height: 380 }}
 		>
 		<div className="resultsContainer">
 

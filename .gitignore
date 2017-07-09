@@ -8,6 +8,7 @@
 
 # production
 /build
+Logodrop.sketchplugin.zip
 
 # misc
 .DS_Store

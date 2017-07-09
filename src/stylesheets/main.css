@@ -5276,10 +5276,23 @@ body {
 
 .appContainer {
   width: 390px;
-  height: 478px; }
+  height: 476px;
+  position: relative; }
 
 header {
   padding-top: 15px;
   padding-bottom: 15px;
   background-color: #EDF0F4;
   border: 1px solid #e1e1e1; }
+
+.iconscout-banner {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  background: #edf0f4;
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px; }
+  .iconscout-banner b {
+    font-weight: 600; }

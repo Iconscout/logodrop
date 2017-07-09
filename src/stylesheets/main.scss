@@ -13,7 +13,8 @@ body {
 
 .appContainer {
 	width: 390px;
-	height: 478px;
+	height: 476px;
+	position: relative;
 }
 
 header {
@@ -21,4 +22,19 @@ header {
 	padding-bottom: 15px;
 	background-color: $gray-lighter;
 	border: 1px solid $gray-light;
+}
+
+.iconscout-banner {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    background: #edf0f4;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    font-size: 12px;
+
+    b {
+    	font-weight: 600
+    }
 }
