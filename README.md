@@ -6,18 +6,6 @@ A **Sketch Plugin** to get brand logos right into Sketch App.
 </a>
 
 ## Installation
-### Easy Install
-* If you use either <a href="http://sketchtoolbox.com/">SketchToolBox</a> or <a href="https://sketchpacks.com/">SketchPacks</a> for MacOS - Just search for **Logodrop** and install from there.
-* With <a href="http://sketchrunner.com/">Sketch Runner</a>, just go to the install command and search for **Logodrop**. Runner allows you to manage plugins and do much more to speed up your workflow in Sketch. <a href="http://sketchrunner.com/">Download Runner here</a>.
-
-<a href="http://bit.ly/SketchRunnerWebsite" rel="nofollow" title="Works with Sketch Runner">
-  <img width="160" height="41" src="http://sketchrunner.com/img/badge_blue.png" >
-</a>
-
-<a href="https://sketchpacks.com/Iconscout/logodrop/install" rel="nofollow" title="Install Logodrop with Sketchpacks">
-  <img width="160" height="41" src="http://sketchpacks-com.s3.amazonaws.com/assets/badges/sketchpacks-badge-install.png" alt="Install Logodrop with Sketchpacks">
-</a>
-
 ### Manual Install
 1. Download and open **[Logodrop-master.zip](https://github.com/Iconscout/logodrop/archive/master.zip)**.
 2. Double click on **Logodrop.sketchplugin** to install.  
