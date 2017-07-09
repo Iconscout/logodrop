@@ -9,6 +9,7 @@
 .btn {
   display: inline-block;
   margin-bottom: 0; // For input.btn
+  // font-family: $font-family-base-2;
   font-weight: $btn-font-weight;
   text-align: center;
   vertical-align: middle;
@@ -49,6 +50,11 @@
     cursor: $cursor-disabled;
     @include opacity(.65);
     @include box-shadow(none);
+  }
+
+
+  &.btn-sq {
+    width: $input-height-base;
   }
 
   // [converter] extracted a& to a.btn
@@ -135,13 +141,25 @@ a.btn {
 .btn-lg {
   // line-height: ensure even-numbered height of button next to large input
   @include button-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $btn-border-radius-large);
+
+  &.btn-sq {
+    width: $input-height-large;
+  }
 }
 .btn-sm {
   // line-height: ensure proper height of button next to small input
   @include button-size($padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+  &.btn-sq {
+    width: $input-height-small;
+  }
 }
 .btn-xs {
   @include button-size($padding-xs-vertical, $padding-xs-horizontal, $font-size-small, $line-height-small, $btn-border-radius-small);
+
+  &.btn-sq {
+    width: $input-height-small;
+  }
 }
 
 

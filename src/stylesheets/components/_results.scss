@@ -1,16 +1,14 @@
 .resultsContainer {
-    max-height: calc(100% - 34px);
     overflow: auto;
-    margin-top: 15px;
-    padding-bottom: 15px;
+    padding: 5px;
 }
 
 .logoItem, .logoLoading {
-    display: block;
-    margin-bottom: 15px;
-    width: 96px;
-    height: 96px;
-    line-height: 82px;
+    display: inline-block;
+    margin: 10px;
+    width: 74px;
+    height: 74px;
+    line-height: 60px;
     text-align: center;
     transition: 0;
 
@@ -31,6 +29,26 @@
     }
 }
 
+.noResultsFound {
+    text-align: center;
+    padding-top: 125px;
+    padding-left: 80px;
+    padding-right: 80px;
+
+    h1 {
+        font-size: 13px;
+        font-weight: bold;
+        color: $text-color;
+        margin-bottom: 5px;
+    }
+
+    p {
+        color: $gray;
+        font-size: 12px;
+    }
+
+}
+
 .animated-background {
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -40,7 +58,6 @@
     background: #f6f7f8;
     background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
     background-size: 800px 104px;
-    height: 96px;
     position: relative;
 }
 
@@ -53,7 +70,15 @@
     }
 }
 
+.btnLoadMoreContainer {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
 #btnLoadMore {
 	margin-top: 30px;
     margin-bottom: 30px;
+    text-transform: uppercase;
+    width: 134px;
 }

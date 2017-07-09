@@ -1,4 +1,6 @@
+@import './variables';
 @import '../plugins/bootstrap-sass-master/assets/stylesheets/bootstrap';
+@import './common/fonts-lato';
 @import './components/elements/scrollbar';
 @import './components/results';
 @import './components/search-form';
@@ -10,6 +12,13 @@ body {
 }
 
 .appContainer {
-	width: 383px;
-	height: 560px;
+	width: 390px;
+	height: 478px;
+}
+
+header {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background-color: $gray-lighter;
+	border: 1px solid $gray-light;
 }

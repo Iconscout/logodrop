@@ -1,5 +1,6 @@
 import { fetchLogos } from '../actions'
 const appInsertLogo = window.app.insertLogo;
+const app = window.app;
 
 const logo = (state = {
 	name: null,
@@ -96,6 +97,16 @@ const results = (
 			appInsertLogo(logo)
 
 			return state
+
+		case 'HANDLE_ERROR':
+			app.showError(action.error)
+			
+			// Return Blank Response
+			return {
+				...state,
+				logos: [],
+				loadingState: false
+			}
 		default:
 			return state
 	}

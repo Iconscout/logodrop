@@ -6,6 +6,7 @@ import thunk from 'redux-thunk';
 import sketchLogosApp from './reducers'
 import App from './components/App'
 import './stylesheets/main.css'
+import { fetchLogos } from './actions'
 //import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 let store = createStore(
@@ -19,3 +20,5 @@ ReactDOM.render(
   	</Provider>,
   	document.getElementById('root')
 );
+
+store.dispatch(fetchLogos("logo"))

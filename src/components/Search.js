@@ -6,7 +6,7 @@ let SearchLogo = ({ dispatch }) => {
 	let q
 
 	return (
-		<div>
+		<header>
 			<form
 				className="form-horizontal"
 				id="frmSearch"
@@ -22,6 +22,7 @@ let SearchLogo = ({ dispatch }) => {
 						ref={node => {
 							q=node
 						}}
+						placeholder="Search Brand Name, i.e. Facebook, etc."
 					/>
 
 					<span className="input-group-btn">
@@ -35,7 +36,7 @@ let SearchLogo = ({ dispatch }) => {
 				</div>
 			
 			</form>
-		</div>
+		</header>
 	)
 }
 

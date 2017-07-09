@@ -34,6 +34,13 @@ export const logoLoaded = (id) => {
 	}
 };
 
+export const handleError = (error) => {
+	return {
+		type: 'HANDLE_ERROR',
+		error
+	}
+}
+
 export const fetchLogos = (q, page=0) => {
 
 	return function (dispatch) {
@@ -43,9 +50,17 @@ export const fetchLogos = (q, page=0) => {
 
 		let url = new URL(Iconscout.config.API_URL + '/v1/icons/search')
 		let params = {
-	        'q': q + ' logo',
+	        'q': q,
 	        'price': 'free',
+	        'categories': 'social-media-logos',
 	        'access_token': Iconscout.config.ACCESS_TOKEN
+		}
+
+		if(q === "logo") {
+			params = {
+				...params,
+				sortBy: 'popularity'
+			}
 		}
 
 		Object.keys(params).forEach(key => url.searchParams.append(key, params[key]))
@@ -63,7 +78,7 @@ export const fetchLogos = (q, page=0) => {
 				dispatch(receiveSearchLogos(responseJson))
 			})
 			.catch((error) => {
-				console.error(error);
+				dispatch(handleError(error))
 			});
 	}
 
