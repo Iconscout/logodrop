@@ -1,12 +1,12 @@
 @import 'common/MochaJSDelegate.js';
-@import 'common/Panel.js';
+@import 'common/Panel.cocoascript';
 @import 'common/PlaceLogo.js';
 @import 'common/SelectedShape.js';
 
 function searchLogos(context) {
   var webviewResource = 'index.html';
   var panelSettings = {
-    width: 395,
+    width: 390,
     height: 560,
     backgroundColor: NSColor.whiteColor()
   };

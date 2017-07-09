@@ -1,6 +1,6 @@
 {
-  "name" : "Sketch Logos",
-  "identifier" : "com.iconscout.sketch-logos",
+  "name" : "Logodrop by Iconscout",
+  "identifier" : "com.iconscout.logodrop",
   "description": "Get all brand logos right into Sketch App",
   "version" : "0.0.1",
   "icon" : "icons/gotoArtboard.png",
@@ -9,16 +9,17 @@
   "authorEmail": "contact@iconscout.com",
   "appcast": "https://raw.githubusercontent.com/Iconscout/sketch-logos/master/appcast.xml",
   "commands" : [{
-    "name" : "Search Logo",
-    "script" : "main.js",
+    "name" : "Logodrop 💎",
+    "script" : "main.cocoascript",
     "handler" : "searchLogos",
-    "identifier" : "search-logo",
-    "description" : "Search Logo"
+    "identifier" : "logodrop",
+    "description" : "Logodrop",
+    "shortcut": "cmd shift f",
   }],
   "menu" : {
     "items" : [
-      "search-logo"
+      "logodrop"
     ],
-    "title" : "Sketch Logos"
+    "isRoot": true
   }
 }
