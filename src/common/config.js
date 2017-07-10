@@ -1,7 +1,7 @@
 var Iconscout = Iconscout || {};
 Iconscout.config = {
   API_URL: 'https://api.iconscout.com',
-  ACCESS_TOKEN: 'dhEg47pjFQHehNjgrT0mWOXyTxNimCqnFnl3ooce'
+  ACCESS_TOKEN: 'rzSWZK6TQEwrj4jvVuuxP7CJu6qaSrPS'
 };
 
 Iconscout.enums = {
