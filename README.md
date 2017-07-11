@@ -2,7 +2,11 @@
 A **Sketch Plugin** to get brand logos right into Sketch App.
 
 <a href="logodrop-by-iconscout.png">
-	<img src="logodrop-by-iconscout.png?raw=true" alt="Logodrop Sketch Plugin by Iconscout" />
+	<img src="logodrop-by-iconscout.png?raw=true" alt="Logodrop Sketch Plugin by Iconscout" width="800" />
+</a>
+
+<a href="logodrop-by-iconscout.png">
+	<img src="preview.gif?raw=true" alt="Logodrop Sketch Plugin by Iconscout" width="800" />
 </a>
 
 ## Installation
