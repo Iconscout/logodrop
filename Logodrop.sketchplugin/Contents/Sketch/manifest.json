@@ -13,8 +13,9 @@
     "script" : "main.cocoascript",
     "handler" : "searchLogos",
     "identifier" : "logodrop",
-    "description" : "Logodrop by Iconscout",
-    "shortcut": "cmd shift f",
+    "description" : "Get all brand logos right into Sketch App",
+    "icon" : "Logodrop-64x64.png",
+    "shortcut": "cmd shift f"
   }],
   "menu" : {
     "items" : [
