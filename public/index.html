@@ -15,6 +15,17 @@
     -->
     <title>React App</title>
 
+    <script type="text/javascript" src="%PUBLIC_URL%/common/loggly.tracker-2.1.min.js"></script>
+
+    <script>
+      var _LTracker = _LTracker || [];
+      _LTracker.push({
+        'logglyKey': '173d71ee-8483-44fe-8823-4c3a007f5e08',
+        'sendConsoleErrors' : true,
+        'tag' : 'logodrop-jslogs' 
+      });
+    </script>
+
     <script type="text/javascript" src="%PUBLIC_URL%/common/PlatformAPI.js"></script>
     <script type="text/javascript">
       document.addEventListener('contextmenu', event => event.preventDefault());
