@@ -9,7 +9,7 @@
   "authorEmail": "contact@iconscout.com",
   "appcast": "https://raw.githubusercontent.com/Iconscout/logodrop/master/Logodrop.sketchplugin/Contents/Sketch/appcast.xml",
   "commands" : [{
-    "name" : "Logodrop 💎",
+    "name" : "💎 Logodrop",
     "script" : "main.cocoascript",
     "handler" : "searchLogos",
     "identifier" : "logodrop",

@@ -1,6 +1,8 @@
 import React from 'react'
 
-const Logo = ({ name, svg_file, colors, loaded, onImageLoaded, onClick }) => (
+import { insertDragStart } from '../actions'
+
+const Logo = ({ id, name, svg_file, colors, loaded, onImageLoaded, onClick }) => (
 	<a
 		href="#"
 		className={"logoItem img-thumbnail " + ( loaded ? "logoLoaded":"" ) }
@@ -15,6 +17,9 @@ const Logo = ({ name, svg_file, colors, loaded, onImageLoaded, onClick }) => (
 			title={name}
 			alt={name}
 			onLoad={onImageLoaded}
+			onDragStart={e => {
+				insertDragStart(id, name)
+			}}
 		/>
 	</a>
 )

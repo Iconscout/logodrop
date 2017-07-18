@@ -2,9 +2,13 @@
 @import 'common/Panel.cocoascript';
 @import 'common/PlaceLogo.js';
 @import 'common/SelectedShape.js';
+@import 'common/Storage.js';
+@import 'common/Url.js';
 
 function searchLogos(context) {
   var webviewResource = 'index.html';
+  var panelData = Storage.loadMany(['gaUid']);
+
   var panelSettings = {
     width: 390,
     height: 498,
@@ -17,13 +21,33 @@ function searchLogos(context) {
       var windowObject = webView.windowScriptObject();
       var request = NSURL.URLWithString(webView.mainFrameURL()).fragment();
 
-      var data = windowObject.valueForKey("data");
+      var data = JSON.parse(windowObject.valueForKey("data"));
 
-      var logo = JSON.parse(data);
+      var actions = {
+        putValue: function() {
+          Storage.put(data.key, data.value);
+        },
 
-      placeLogo(logo, context);
+        clearValue: function() {
+          Storage.clear(data.key);
+        },
 
-      log(data);
+        INSERT_LOGO: function () {
+          placeLogo(data, context);
+        },
+
+        openUrl: function () {
+          openURL(data.url);
+        },
+
+        log: function () {
+          log(data);
+        }
+      };
+
+      if(actions.hasOwnProperty(request)) {
+        actions[request]();
+      }
     }
   }
 

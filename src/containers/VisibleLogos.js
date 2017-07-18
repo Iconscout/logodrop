@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import LogoList from '../components/LogoList'
-import { loadMoreLogos, logoLoaded, insertLogo } from '../actions'
+import { loadMoreLogos, logoLoaded, insertLogo, insertLogoStart } from '../actions'
 
 const mapStateToProps = (state) => {
 	return {
@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatcherToProps = (dispatch, ownProps) => {
 	return {
-		onLogoClick: (id) => {
-			dispatch(insertLogo(id))
+		onLogoClick: (logo) => {
+			dispatch(insertLogo(logo))
 		},
 		onImageLoaded: (id) => {
 			dispatch(logoLoaded(id))

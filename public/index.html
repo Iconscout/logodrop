@@ -13,9 +13,9 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Logodrop by Iconscout</title>
 
-    <script type="text/javascript" src="%PUBLIC_URL%/common/PlatformAPI.js"></script>
+    <script type="text/javascript" src="%PUBLIC_URL%/common/PlatformSketch.js"></script>
     <script type="text/javascript">
       document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
@@ -34,6 +34,26 @@
 
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+    --> 
+
+    <!-- Generate a unique user id for tracking -->
+    <script type="text/javascript">
+      function guid() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+          s4() + '-' + s4() + s4() + s4();
+      }
+
+      var gaUid = app.storage.get('gaUid') || guid();
+
+      // Store it to the session storage
+      app.storage.set('gaUid', gaUid);
+
+      window.gaUid = gaUid;
+    </script>
   </body>
 </html>

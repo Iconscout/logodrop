@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import Iconscout from '../common/config.js'
+import { visitor } from '../ga'
 
 export const requestSearchLogos = () => {
 	return {
@@ -7,10 +8,11 @@ export const requestSearchLogos = () => {
 	}
 };
 
-export const receiveSearchLogos = (results) => {
+export const receiveSearchLogos = (results, q) => {
 	return {
 		type: 'RECEIVE_SEARCH_LOGOS',
-		results
+		results,
+		q
 	}
 };
 
@@ -72,10 +74,12 @@ export const fetchLogos = (q, page=0) => {
 			headers: headers
 		});
 
+		// visitor.event('search', q, page).send()
+
 		return fetch(request)
 			.then((response) => response.json())
 			.then((responseJson) => {
-				dispatch(receiveSearchLogos(responseJson))
+				dispatch(receiveSearchLogos(responseJson, q))
 			})
 			.catch((error) => {
 				dispatch(handleError(error))
@@ -86,7 +90,7 @@ export const fetchLogos = (q, page=0) => {
 
 export const loadMoreLogos = (nextPage) => {
 
-	return function (dispatch) {
+	return function (dispatch, getState) {
 		
 		dispatch(requestSearchLogos())
 
@@ -97,7 +101,7 @@ export const loadMoreLogos = (nextPage) => {
 			})
 		var request = new Request(url, {
 			headers: headers
-		});
+		})
 
 		return fetch(request)
 			.then((response) => response.json())
@@ -108,4 +112,12 @@ export const loadMoreLogos = (nextPage) => {
 				console.error(error);
 			});
 	}
+};
+
+export const insertDragStart = (id, name) => {
+	visitor.event('Drag', name, id).send()
+};
+
+export const insertLogoStart = (id, name) => {
+	visitor.event('Insert', name, id).send()
 };

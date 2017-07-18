@@ -16,6 +16,7 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.1",
     "redux-thunk": "^2.2.0",
+    "universal-analytics": "^0.4.13",
     "webpack": "^3.0.0"
   },
   "devDependencies": {

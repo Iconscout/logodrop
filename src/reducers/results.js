@@ -1,4 +1,6 @@
-import { fetchLogos } from '../actions'
+import { fetchLogos, insertLogoStart } from '../actions'
+import { visitor } from '../ga'
+
 const appInsertLogo = window.app.insertLogo;
 const app = window.app;
 
@@ -49,8 +51,10 @@ const logoList = (state = [], action) => {
 
 const results = (
 	state = {
+		q: null,
 		logos: [],
 		loadingState: false,
+		currentPage: 1,
 		nextPage: null
 	},
 	action
@@ -62,10 +66,15 @@ const results = (
 				loadingState: true,
 			};
 		case 'RECEIVE_SEARCH_LOGOS':
+			
+			visitor.event('search', action.q, action.results.current_page).send()
+
 			return {
 				...state,
+				q: action.q,
 				nextPage: action.results.next_page_url,
 				logos: logoList(state.logos, action),
+				currentPage: action.results.current_page,
 				loadingState: false,
 			}
 		case 'CLEAR_SEARCH_LOGOS':
@@ -95,6 +104,7 @@ const results = (
 			});
 
 			appInsertLogo(logo)
+			insertLogoStart(logo.id, logo.name)
 
 			return state
 

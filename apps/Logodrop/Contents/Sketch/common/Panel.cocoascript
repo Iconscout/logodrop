@@ -3,6 +3,7 @@ function showPanel(options) {
   var webviewResource = options.webviewResource;
   var panelSettings = options.panelSettings;
   var delegateListeners = options.delegateListeners;
+  var panelData = options.panelData;
 
   try {
     var resourcePath = context.plugin.urlForResourceNamed(webviewResource).path();
@@ -11,7 +12,7 @@ function showPanel(options) {
 
     // Main window
     var title = "Logodrop by Iconscout";
-    var identifier = "com.iconscout.logodrop";
+    var identifier = "com.iconscout.sketch.logodrop";
     var threadDictionary = NSThread.mainThread().threadDictionary();
 
     if (threadDictionary[identifier]) {
@@ -46,6 +47,9 @@ function showPanel(options) {
 
     webView.setBackgroundColor(panelSettings.backgroundColor);
     webView.setFrameLoadDelegate_(delegate.getClassInstance());
+    // Put data in Window Panel
+    var script = "window.localData=" + JSON.stringify(panelData);
+    webView.stringByEvaluatingJavaScriptFromString(script);
     webView.setMainFrameURL_(url);
 
     contentView.addSubview(webView);
