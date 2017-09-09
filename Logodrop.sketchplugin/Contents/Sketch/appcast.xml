@@ -6,6 +6,18 @@
     <description>Get all brand logos right into Sketch App</description>
     <language>en</language>
     <item>
+      <title>1.0.1</title>
+      <description>
+        <![CDATA[
+          <ul>
+            <li>Minor Bug Fixes</li>
+          </ul>
+        ]]>
+      </description>
+      <pubDate>Mon, 9 September 2017 13:58:42 +0000</pubDate>
+      <enclosure url="https://github.com/Iconscout/logodrop/releases/download/1.0.1/Logodrop.sketchplugin.zip" type="application/octet-stream" sparkle:version="1.0"/>
+    </item>
+    <item>
       <title>1.0.0</title>
       <description>
         <![CDATA[
