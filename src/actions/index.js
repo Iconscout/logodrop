@@ -2,6 +2,8 @@ import fetch from 'isomorphic-fetch'
 import Logodrop from '../common/config.js'
 import { visitor } from '../ga'
 
+const app = window.app;
+
 export const requestSearchLogos = () => {
 	return {
 		type: 'REQUEST_SEARCH_LOGOS'
@@ -42,6 +44,55 @@ export const handleError = (error) => {
 		error
 	}
 }
+
+// returns true if semver string versionA is greater than versionB, and false otherwise
+const versionCompare = (versionA, versionB) => {
+	var versionSegmentsA = versionA.split('.')
+	var versionSegmentsB = versionB.split('.')
+	for (var i = 0; i < 3; i++) {
+		var versionSegmentA = parseInt(versionSegmentsA[i], 10)
+		var versionSegmentB = parseInt(versionSegmentsB[i], 10)
+		if (versionSegmentA > versionSegmentB) return true
+		if (versionSegmentB > versionSegmentA) return false
+		if (!isNaN(versionSegmentA) && isNaN(versionSegmentB)) return true
+		if (isNaN(versionSegmentA) && !isNaN(versionSegmentB)) return false
+	}
+	return false
+}
+
+export const checkPluginUpdate = () => {
+
+	return function (dispatch, getState) {
+
+		return fetch(app.storage.get('manifest') || Logodrop.config.MANIFEST)
+			.then((response) => response.json())
+			.then((responseJson) => {
+				var currentVersion = app.storage.get('currentVersion') || '0.0.0'
+				var liveVersion = responseJson.version
+
+				if(versionCompare(liveVersion, currentVersion)) {
+					app.showMessage('New version of Plugin is available. Update Now!')
+					console.log("currentVersion is " + liveVersion + ". Plugin version is "+ currentVersion)
+				}
+
+			})
+			.catch((error) => {
+				console.log(error)
+			})
+
+	}
+
+}
+
+export const checkIfStateUpdateRequired = (lastDate, duration = 3) => {
+	var date1 = new Date(lastDate)
+	var date2 = new Date()
+	var timeDiff = Math.abs(date2.getTime() - date1.getTime())
+	var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24))
+	
+	return diffDays > duration
+}
+
 
 export const fetchLogos = (q, page=0) => {
 

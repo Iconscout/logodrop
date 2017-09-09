@@ -8,7 +8,7 @@ import { visitor } from './ga'
 import sketchLogosApp from './reducers'
 import App from './components/App'
 import './stylesheets/main.css'
-import { fetchLogos } from './actions'
+import { checkPluginUpdate, fetchLogos } from './actions'
 //import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 let store = createStore(
@@ -23,6 +23,7 @@ ReactDOM.render(
   	document.getElementById('root')
 );
 
+store.dispatch(checkPluginUpdate())
 store.dispatch(fetchLogos("logo"))
 window.ga = visitor
 visitor.pageview('/', 'com.iconscout.sketch.logodrop').event('app', 'sketch').send()
