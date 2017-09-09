@@ -4,6 +4,7 @@
 @import 'common/SelectedShape.js';
 @import 'common/Storage.js';
 @import 'common/Url.js';
+@import 'common/Message.js';
 @import 'common/Manifest.js';
 
 function searchLogos(context) {
@@ -44,6 +45,10 @@ function searchLogos(context) {
 
         log: function () {
           log(data);
+        },
+
+        showMessage: function () {
+          showMessage(data.message, context);
         }
       };
 

@@ -72,6 +72,7 @@ export const checkPluginUpdate = () => {
 
 				if(versionCompare(liveVersion, currentVersion)) {
 					app.showMessage('New version of Plugin is available. Update Now!')
+					document.querySelector('.btn-update').style = 'display: block'
 					console.log("currentVersion is " + liveVersion + ". Plugin version is "+ currentVersion)
 				}
 

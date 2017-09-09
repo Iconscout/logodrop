@@ -5125,7 +5125,7 @@ header {
   background-color: #EDF0F4;
   border: 1px solid #e1e1e1; }
 
-.iconscout-banner {
+.logodrop-banner {
   position: absolute;
   bottom: 0;
   text-align: center;
@@ -5134,5 +5134,10 @@ header {
   height: 30px;
   line-height: 30px;
   font-size: 12px; }
-  .iconscout-banner b {
+  .logodrop-banner b {
     font-weight: 600; }
+  .logodrop-banner .btn-update {
+    display: none;
+    position: absolute;
+    right: 4px;
+    top: 4px; }

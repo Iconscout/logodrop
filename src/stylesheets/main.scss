@@ -24,7 +24,7 @@ header {
 	border: 1px solid $gray-light;
 }
 
-.iconscout-banner {
+.logodrop-banner {
     position: absolute;
     bottom: 0;
     text-align: center;
@@ -36,5 +36,12 @@ header {
 
     b {
     	font-weight: 600
+    }
+
+    .btn-update {
+        display: none;
+        position: absolute;
+        right: 4px;
+        top: 4px;
     }
 }
