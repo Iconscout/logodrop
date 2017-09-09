@@ -27,7 +27,7 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/stylesheets/ -o src/stylesheets/ --watch --recursive --precision 10",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "cross-env REACT_APP_OUTPUT=sketch npm run build-css && react-scripts build",
+    "build": "npm run build-css && cross-env REACT_APP_OUTPUT=sketch react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sketch-clean": "rmdir-cli \"Logodrop.sketchplugin\"",
