@@ -4,10 +4,12 @@
 @import 'common/SelectedShape.js';
 @import 'common/Storage.js';
 @import 'common/Url.js';
+@import 'common/Manifest.js';
 
 function searchLogos(context) {
   var webviewResource = 'index.html';
-  var panelData = Storage.loadMany(['gaUid']);
+  loadManifest(context);
+  var panelData = Storage.loadMany(['currentVersion', 'manifest', 'gaUid']);
 
   var panelSettings = {
     width: 390,
