@@ -24,4 +24,5 @@ ReactDOM.render(
 );
 
 store.dispatch(fetchLogos("logo"))
-visitor.pageview('/', 'com.iconscout.sketch.logodrop').send()
+window.ga = visitor
+visitor.pageview('/', 'com.iconscout.sketch.logodrop').event('app', 'sketch').send()

@@ -27,13 +27,13 @@
     "watch-css": "npm run build-css && node-sass-chokidar src/stylesheets/ -o src/stylesheets/ --watch --recursive --precision 10",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
+    "build": "cross-env REACT_APP_OUTPUT=sketch npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "sketch-clean": "rmdir-cli \"Logodrop.sketchplugin\"",
     "sketch-resources": "cpx build/**/*.* \"Logodrop.sketchplugin/Contents/Resources/\"",
     "sketch-core": "cpx apps/Logodrop/**/*.* ./Logodrop.sketchplugin/",
     "sketch-manifest": "rename-files ./Logodrop.sketchplugin/Contents/Sketch/ dev-manifest.json manifest.json",
-    "build-sketch-plugin": "npm run sketch-clean && npm run sketch-resources && npm run sketch-core && npm run sketch-manifest"
+    "build-sketch-plugin": "cross-env REACT_APP_OUTPUT=sketch npm run sketch-clean && npm run sketch-resources && npm run sketch-core && npm run sketch-manifest"
   }
 }

@@ -17,6 +17,11 @@ app.openURL = (url) => {
 	app.performAction('openUrl', { url: url });
 }
 
+app.showMessage = function (message) {
+	app.performAction('showMessage', { message: message });
+}
+
+
 var Storage = {
 	has: function (key) {
 		return window.localData.hasOwnProperty(key)

@@ -109,7 +109,7 @@ const results = (
 			return state
 
 		case 'HANDLE_ERROR':
-			app.showError(action.error)
+			app.showMessage(action.error)
 			
 			// Return Blank Response
 			return {

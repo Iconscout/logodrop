@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import SearchForm from '../containers/SearchForm'
 import VisibleLogos from '../containers/VisibleLogos'
-import IconscoutBanner from './IconscoutBanner'
+import LogodropBanner from './LogodropBanner'
 
 const App = () => (
   <div className="appContainer">
     <SearchForm />
     <VisibleLogos />
-    <IconscoutBanner />
+    <LogodropBanner />
   </div>
 )
 

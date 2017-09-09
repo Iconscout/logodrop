@@ -53,4 +53,8 @@ app.openURL = (url) => {
 	window.open(url);
 }
 
+app.showMessage = function (message) {
+	console.log("Message: " + message);
+}
+
 app.storage = new Storage();

@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch'
-import Iconscout from '../common/config.js'
+import Logodrop from '../common/config.js'
 import { visitor } from '../ga'
 
 export const requestSearchLogos = () => {
@@ -50,18 +50,18 @@ export const fetchLogos = (q, page=0) => {
 		dispatch(clearSearchLogos())
 		dispatch(requestSearchLogos())
 
-		let url = new URL(Iconscout.config.API_URL + '/v1/icons/search')
+		let url = new URL(Logodrop.config.API_URL + '/v1/icons/search')
 		let params = {
 	        'q': q,
 	        'price': 'free',
 	        'categories': 'social-media-logos',
-	        'access_token': Iconscout.config.ACCESS_TOKEN
+	        'access_token': Logodrop.config.ACCESS_TOKEN
 		}
 
 		if(q === "logo") {
 			params = {
 				...params,
-				sortBy: 'popularity'
+				sort: 'popularity'
 			}
 		}
 
@@ -74,7 +74,7 @@ export const fetchLogos = (q, page=0) => {
 			headers: headers
 		});
 
-		// visitor.event('search', q, page).send()
+		visitor.event('search', q).send()
 
 		return fetch(request)
 			.then((response) => response.json())
@@ -102,6 +102,8 @@ export const loadMoreLogos = (nextPage) => {
 		var request = new Request(url, {
 			headers: headers
 		})
+
+		visitor.event('search', 'loadmore').send()
 
 		return fetch(request)
 			.then((response) => response.json())
