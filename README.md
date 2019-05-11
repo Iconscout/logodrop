@@ -1,3 +1,6 @@
+Thanks for using Logodrop. We suggest you to use [Icondrop](https://iconscout.com/icondrop/) which is our Official plugin for icons, logos, and many more.
+-------------
+
 # Logodrop by Iconscout
 A **Sketch Plugin** to get brand logos right into Sketch App.
 
